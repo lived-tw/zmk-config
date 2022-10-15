@@ -34,7 +34,7 @@
 			};
 		};
 	
-	
+
 	//Double tap A to select all
 		behaviors {		
 			td0: CTR_A {
@@ -42,7 +42,7 @@
 				label = "CTR_A";
 				#binding-cells = <0>;
 				tapping-term-ms = <400>;
-				bindings = <&kp A>, <&kp LC(A)>;
+				bindings = <&kp A>, <&kp LG(A)>;
 			};
 		};
 	
@@ -147,18 +147,18 @@
 
         default_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |  ESC  |  1  |  2  |  3   |  4   |  5  |                      |  6   |   7   |  8    |  9   |   0   | BKSPC |
-// |  TAB  |  Q  |  W  |  E   |  R   |  T  |                      |  Y   |   U   |  I    |  O   |   P   |   \   |
-// |  CAPS |  A  |  S  |  D   |  F   |  G  |                      |  H   |   J   |  K    |  L   |   ;   |   '   |
-// |  WIN  |  Z  |  X  |  C   |  V   |  B  | MUTE |       |WinLock|  N   |   M   |  ,    |  .   |   /   | PRINT |
-//               |CTRL | ALT  | SHIFT|LOWER| ENTER|       | SPACE | RAISE|  DEL  | HOME  |  END |
+// |  `    |  1  |  2  |  3   |  4   |  5  |                      |  6   |   7   |  8    |  9   |   0   | BKSPC |
+// |  ESC  |  Q  |  W  |  E   |  R   |  T  |                      |  Y   |   U   |  I    |  O   |   P   |   \   |
+// |  TAB  |  A  |  S  |  D   |  F   |  G  |                      |  H   |   J   |  K    |  L   |   ;   |   '   |
+// |  SHIFT|  Z  |  X  |  C   |  V   |  B  |      |       |       |  N   |   M   |  ,    |  .   |   /   | SHIFT |
+//               |CTRL | ALT  | GUI  |LOWER| SPACE|       | ENTER | RAISE|  DEL  | HOME  |  END |
             bindings = <
 			
-&kp ESC  	&mt F1 N1  &mt F2 N2   &mt F3 N3   &mt F4 N4    &mt F5 N5                             &mt F6 N6     &mt F7 N7    &mt F8 N8     &mt F9 N9   &mt F10 N0   &kp BSPC
-&kp TAB   	&kp Q  	   &kp W       &kp E       &kp R        &kp T                                 &kp Y         &kp U        &kp I         &mt F11 O   &mt F12 P    &kp BSLH
-&kp CAPS  	&td0  	   &kp S       &kp D       &kp F        &kp G                                 &kp H         &kp J        &kp K         &kp L       &kp SEMI     &kp SQT
-&td1  		&td2  	   &td3        &td4        &td5         &kp B      &kp C_MUTE      &kp LG(L)  &kp N         &kp M        &kp COMMA     &kp DOT     &kp FSLH     &kp PSCRN
-					   &kp LCTRL   &td6   	   &kp LSHFT  	&td7       &kp ENTER       &kp SPACE  &td8          &kp DEL      &kp HOME      &kp END
+&kp GRAVE  	&mt F1 N1  &mt F2 N2   &mt F3 N3   &mt F4 N4    &mt F5 N5                             &mt F6 N6     &mt F7 N7    &mt F8 N8     &mt F9 N9   &mt F10 N0   &kp BSPC
+&kp ESC   	&kp Q  	   &kp W       &kp E       &kp R        &kp T                                 &kp Y         &kp U        &kp I         &mt F11 O   &mt F12 P    &kp BSLH
+&kp TAB  	&td0  	   &kp S       &kp D       &kp F        &kp G                                 &kp H         &kp J        &kp K         &kp L       &kp SEMI     &kp SQT
+&kp LSHFT	&td2  	   &td3        &td4        &td5         &kp B      &none           &none      &kp N         &kp M        &kp COMMA     &kp DOT     &kp FSLH     &kp RSHFT
+					   &kp LCTRL   &td6   	   &kp LGUI  	&td7       &kp SPACE       &kp ENTER  &td8          &kp DEL      &kp HOME      &kp END
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
@@ -167,17 +167,17 @@
         lower_layer {
 // TODO: Some binds are waiting for shifted keycode support.
 // ------------------------------------------------------------------------------------------------------------
-// |      |   |   |   |   |   |                   |   | 7 | 8 | 9 | + |     |
-// |USB/BT|   |   |   |   |   |                   |   | 4 | 5 | 6 | - |     |
-// |      |   |   |   |   |   |                   |   | 1 | 2 | 3 | * |ENTER|
-// |      |   |   |   |   |   |      |       |    |   |   | 0 | . | / |     |
-//            |   |   |   |   |ON/OFF|       |    |   |   |   |   |
+// |      |   |   |   |   |   |                    |   | 7 | 8 | 9 | + |     |
+// |USB/BT|   |   |   |   |   |                    |   | 4 | 5 | 6 | - |     |
+// |      |   |   |   |   |   |                    |   | 1 | 2 | 3 | * |     |
+// |      |   |   |   |   |   |      |       |     |   |   | 0 | . | / |     |
+//            |   |   |   |   |ON/OFF|       |ENTER|   |   |   |   |   |
             bindings = <
-&trans        &trans  &trans  &trans   &trans   &trans                                   &trans    &kp N7  &kp N8   &kp N9    &kp PLUS    &trans
-&out OUT_TOG  &trans  &trans  &trans   &trans   &trans                                   &trans    &kp N4  &kp N5   &kp N6    &kp MINUS   &trans
-&trans        &trans  &trans  &trans   &trans   &trans                 	                 &trans    &kp N1  &kp N2   &kp N3    &kp ASTRK   &kp ENTER
-&trans        &trans  &trans  &trans   &trans   &trans   &trans                 &trans   &trans    &trans  &kp N0   &kp DOT   &kp SLASH   &trans
-                      &trans  &trans   &trans   &trans   &ext_power EP_TOG      &trans   &trans    &trans  &trans   &trans
+&trans        &trans  &trans  &trans   &trans   &trans                                    &trans    &kp N7  &kp N8   &kp N9    &kp PLUS    &trans
+&out OUT_TOG  &trans  &trans  &trans   &trans   &trans                                    &trans    &kp N4  &kp N5   &kp N6    &kp MINUS   &trans
+&trans        &trans  &trans  &trans   &trans   &trans                 	                  &trans    &kp N1  &kp N2   &kp N3    &kp ASTRK   &trans
+&trans        &trans  &trans  &trans   &trans   &trans   &trans                 &trans    &trans    &trans  &kp N0   &kp DOT   &kp SLASH   &trans
+                      &trans  &trans   &trans   &trans   &ext_power EP_TOG      &kp ENTER &trans    &trans  &trans   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
@@ -185,17 +185,17 @@
 
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |   |   |   |   |   |   |                   |    |    |      |     |    |    |
-// |   |   |   |   |   |   |                   |    |    |  up  |     |    |    |
-// |   |   |   |   |   |   |                   |    |left| down |right|    |    |
-// |   |   |   |   |   |   |    | 		 |     |    |    |      |     |    |    |
-//         |   |   |   |   |    | 		 |     |    |    |      |     |
+// |   |   |   |   |   |   |                   |    |    |      |     |    |     |
+// |   |   |   |   |   |   |                   |    |    |  up  |     |    |     |
+// |   |   |   |   |   |   |                   |    |left| down |right|DEL |BKSPC|
+// |   |   |   |   |   |   |    | 		 |     |    |PGUP| PGDN |     |    |     |
+//         |   |   |   |   |    | 		 |     |    |HOME| END  |     |
             bindings = <
-&trans  &trans  &trans  &trans   &trans   &trans                       &trans    &trans   &trans    &trans     &trans   &trans
-&trans  &trans  &trans  &trans   &trans   &trans                       &trans    &trans   &kp UP    &trans     &trans   &trans
-&trans  &trans  &trans  &trans   &trans   &trans                   	   &trans    &kp LEFT &kp DOWN  &kp RIGHT  &trans   &trans
-&trans  &trans 	&trans 	&trans 	 &trans   &trans  &trans       &trans  &trans    &trans   &trans    &trans     &trans   &trans
-                &trans  &trans   &trans   &trans  &trans       &trans  &trans    &trans   &trans    &trans
+&trans  &trans  &trans  &trans   &trans   &trans                       &trans    &trans    &trans    &trans     &trans   &trans
+&trans  &trans  &trans  &trans   &trans   &trans                       &trans    &trans    &kp UP    &trans     &trans   &trans
+&trans  &trans  &trans  &trans   &trans   &trans                   	   &trans    &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
+&trans  &trans 	&trans 	&trans 	 &trans   &trans  &trans       &trans  &trans    &kp PG_UP &kp PG_DN &trans     &trans   &trans
+                &trans  &trans   &trans   &trans  &trans       &trans  &trans    &kp HOME  &kp END   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
