@@ -191,9 +191,9 @@
 //         |   |   |   |   |    | 		 |     |    |    |      |     |
             bindings = <
 &trans  &trans  &trans  &trans   &trans   &trans                       &trans    &trans    &trans    &trans     &trans   &trans
-&trans  &trans  &trans  &kp LBRC &kp RBRC &trans                       &trans    &kp PG_UP &kp UP    &kp PG_DN  &trans   &trans
+&trans  &trans  &trans  &kp LBRC &kp RBRC &trans                       &trans    &kp HOME  &kp UP    &kp END    &trans   &trans
 &trans  &trans  &trans  &kp LBKT &kp RBKT &trans                   	   &trans    &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC
-&trans  &trans 	&trans 	&kp KPAR &kp RPAR &trans  &trans       &trans  &trans    &kp HOME  &none     &kp END    &trans   &trans
+&trans  &trans 	&trans 	&kp LPAR &kp RPAR &trans  &trans       &trans  &trans    &kp PG_UP &none     &kp PG_DN    &trans   &trans
                 &trans  &trans   &trans   &trans  &trans       &trans  &trans    &trans    &trans    &trans
             >;
 
