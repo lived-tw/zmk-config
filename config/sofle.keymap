@@ -34,91 +34,6 @@
 			};
 		};
 	
-
-	//Double tap A to select all
-		behaviors {		
-			td0: CTR_A {
-				compatible = "zmk,behavior-tap-dance";
-				label = "CTR_A";
-				#binding-cells = <0>;
-				tapping-term-ms = <400>;
-				bindings = <&kp A>, <&kp LG(A)>;
-			};
-		};
-	
-	
-	//Double tap Win to active clipboard
-		behaviors {		
-			td1: WIN_V {
-				compatible = "zmk,behavior-tap-dance";
-				label = "WIN_V";
-				#binding-cells = <0>;
-				tapping-term-ms = <400>;
-				bindings = <&kp LWIN>, <&kp LG(V)>;
-			};
-		};
-	
-	
-	//Double tap Z to undo
-		behaviors {		
-			td2: CTR_Z {
-				compatible = "zmk,behavior-tap-dance";
-				label = "CTR_Z";
-				#binding-cells = <0>;
-				tapping-term-ms = <400>;
-				bindings = <&kp Z>, <&kp LC(Z)>;
-			};
-		};	
-	
-	
-	//Double tap X to cut
-		behaviors {		
-			td3: CTR_X {
-				compatible = "zmk,behavior-tap-dance";
-				label = "CTR_X";
-				#binding-cells = <0>;
-				tapping-term-ms = <400>;
-				bindings = <&kp X>, <&kp LC(X)>;
-			};
-		};	
-	
-
-	//Double tap C to copy
-		behaviors {		
-			td4: CTR_C {
-				compatible = "zmk,behavior-tap-dance";
-				label = "CTR_C";
-				#binding-cells = <0>;
-				tapping-term-ms = <400>;
-				bindings = <&kp C>, <&kp LC(C)>;
-			};
-		};
-
-		
-	//Double tap V to paste
-		behaviors {		
-			td5: CTR_V {
-				compatible = "zmk,behavior-tap-dance";
-				label = "CTR_V";
-				#binding-cells = <0>;
-				tapping-term-ms = <400>;
-				bindings = <&kp V>, <&kp LC(V)>;
-			};
-		};	
-		
-	
-	//Double tap ALT to close
-		behaviors {
-			td6: ALT_F4 {
-				compatible = "zmk,behavior-tap-dance";
-				label = "ALT_F4";
-				#binding-cells = <0>;
-				tapping-term-ms = <400>;
-				bindings = <&kp LALT>, <&kp LA(F4)>;
-			};
-		};
-	
-
 	//Double tap low layer to lock
 		behaviors {
 			td7: Lower_layer {
@@ -157,7 +72,7 @@
 &kp ESC   	&kp Q  	   &kp W       &kp E       &kp R        &kp T                                 &kp Y         &kp U        &kp I         &kp O       &kp P        &kp EQUAL
 &kp TAB  	&kp A  	   &kp S       &kp D       &kp F        &kp G                                 &kp H         &kp J        &kp K         &kp L       &kp SEMI     &kp SQT
 &kp LSHFT	&kp Z  	   &kp X       &kp C       &kp V        &kp B      &none           &none      &kp N         &kp M        &kp COMMA     &kp DOT     &kp FSLH     &kp RSHFT
-					   &kp LCTRL   &td6   	   &kp LGUI	    &kp ENTER  &td7            &td8       &kp SPACE     &kp BSPC     &kp DEL      &kp BSLH
+					   &kp LCTRL   &kp LALT	   &kp LGUI	    &kp ENTER  &td7            &td8       &kp SPACE     &kp BSPC     &kp DEL      &kp BSLH
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
